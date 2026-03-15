@@ -22,3 +22,20 @@ write(1, "line 4\n", 7line 4
 )                 = 7
 +++ exited with 0 +++
 ```
+
+```bash
+$ strace -e write ./target/debug/stderr
+write(2, "printing line ", 14printing line )          = 14
+write(2, "0", 10)                        = 1
+write(2, " to standard output\n", 20 to standard output
+)   = 20
+write(2, "printing line ", 14printing line )          = 14
+write(2, "1", 11)                        = 1
+write(2, " to standard output\n", 20 to standard output
+)   = 20
+write(2, "printing line ", 14printing line )          = 14
+write(2, "2", 12)                        = 1
+write(2, " to standard output\n", 20 to standard output
+)   = 20
++++ exited with 0 +++
+```
