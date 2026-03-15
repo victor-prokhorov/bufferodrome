@@ -39,3 +39,14 @@ write(2, " to standard output\n", 20 to standard output
 )   = 20
 +++ exited with 0 +++
 ```
+
+```bash
+$ strace -e write ./target/debug/bufwriter
+write(1, "line 0\nline 1\nline 2\nline 3\nline"..., 35line 0
+line 1
+line 2
+line 3
+line 4
+) = 35
++++ exited with 0 +++
+```
