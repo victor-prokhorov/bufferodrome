@@ -2,3 +2,10 @@
 name = "rust_buffering"
 version = "0.1.0"
 edition = "2024"
+
+[features]
+# Enable with stage1 rustc only:
+#   RUSTFLAGS="--sysroot $STAGE1_SYSROOT -C prefer-dynamic" \
+#   LD_LIBRARY_PATH="$STAGE1_SYSROOT_LIB" \
+#   rustup run stage1 cargo build --bin stdio_buffering_proof --features stage1
+stage1 = []
